@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navbar from './components/Navbar';
+import LoginForm from './components/loginForm';
+import SignupForm from './components/signupForm';
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { pageState: "home",userState:""};
+  }
+  onHomeBodyChange=(e)=>{
+     this.setState({ pageState: e });
+  }
+  UserStateManager(st) {
+    window.sessionStorage.setItem("userState", st);
+    return;
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  render() {
+    var home = "";
+    if (this.state.pageState ==="login") {
+      home = <LoginForm  onHomeChange={this.onHomeBodyChange}/>
+    }
+    if (this.state.pageState === 'signIn') {
+      home=<SignupForm onHomeChange={this.onHomeBodyChange} />
+    } 
+    return (
+      <React.Fragment>
+        <Navbar onHomeChange={this.onHomeBodyChange} onUserStateChange={ this.UserStateManager} />
+        <div className="container-fluid my-3  rounded-3 border-shadow " >
+          {home}
+        </div>
+        </React.Fragment>
+    );
+  }
 }
 
 export default App;
