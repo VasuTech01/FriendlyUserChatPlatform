@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Toastmsg from "./toastmsg";
 import  Validator  from "validator";
-import {UserLogin} from "../API/userReqs"
+import { UserLogin } from "../API/userReqs";
+import socket from "../API/socketHandler";
 class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +47,7 @@ class LoginForm extends Component {
       window.sessionStorage.setItem("userState", "loged");
       window.sessionStorage.setItem("user", res.user.username);
       window.sessionStorage.setItem("token", res.token);
+      socket.emit("add-user-to-list", res.user.username);
       this.setState({
         toastmsg: "show",
         loginRespo: "You Are Logged In , enjoy!",

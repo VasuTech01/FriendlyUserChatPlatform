@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import LoginForm from './components/loginForm';
 import SignupForm from './components/signupForm';
+import Home from "./components/home/Home";
 class App extends Component {
   constructor() {
     super();
@@ -17,7 +18,7 @@ class App extends Component {
 
 
   render() {
-    var home = "";
+    var home = <Home/>;
     if (this.state.pageState ==="login") {
       home = <LoginForm  onHomeChange={this.onHomeBodyChange}/>
     }
@@ -27,7 +28,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar onHomeChange={this.onHomeBodyChange} onUserStateChange={ this.UserStateManager} />
-        <div className="container-fluid my-3  rounded-3 border-shadow " >
+        <div className="container-fluid my-4 rounded-3 border border-primary border-shadow " >
           {home}
         </div>
         </React.Fragment>
