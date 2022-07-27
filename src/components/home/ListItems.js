@@ -8,58 +8,34 @@ export default class ListItems extends Component {
   render() {
     return (
       <div
-        style={{ width: "80%", justifyContent: "space-around",position: "relative",left:"10%",boxShadow:"4px 2px 4px gray" }}
+        style={{
+          width: "60%",
+          justifyContent: "space-around",
+          position: "relative",
+          left: "10%",
+          boxShadow: "4px 2px 4px gray",
+         
+        }}
         className="d-flex bd-highlight p-2   border rounded   border-warning bg-success my-1 text-light"
+        onClick={()=>{this.props.onCalleSelect(this.props.username,this.props.userid)}}
       >
-        <div style={{ width: "59%" }} className="p-2  ">
-          <strong style={{ width: "20%" }}>{this.props.username}</strong>🚩
-          <strong style={{ width: "80%" }}>{this.props.userid}</strong>
+        <div
+          style={{ width: "50%" }}
+          className="p-2  "
+          // onMouseOver={(e)=>{e.stopPropagation()}}
+        >
+          {this.props.username}😃
         </div>
         <div
           style={{
             border: "2px solid gray",
-            width: "17%",
-            fontSize: "22px",
-            color: "gray",
+            width: "50%",
             fontWeight: "bold",
           }}
           className="p-2  bd-highlight"
-          onMouseOver={(e) => {
-            e.target.style.transitionDuration = "0.2s";
-            e.target.style.fontSize = "18px";
-              
-          }}
-          onMouseOut={(e) => {
-            e.target.style.transitionDuration = "0.2s";
-            e.target.style.fontSize = "22px";
-              
-          }}
-
+          // onMouseOver={(e)=>{e.stopPropagation()}}
         >
-          📸
-        </div>
-        <div
-          style={{
-            border: "2px solid gray",
-            width: "17%",
-            fontSize: "20px",
-            color: "gray",
-            fontWeight: "bold",
-          }}
-          className="p-2  bd-highlight"
-
-          onMouseOver={(e) => {
-            e.target.style.transitionDuration = "0.2s";
-            e.target.style.fontSize = "18px";
-              
-          }}
-          onMouseOut={(e) => {
-            e.target.style.transitionDuration = "0.2s";
-            e.target.style.fontSize = "22px";
-              
-          }}
-        >
-          📑
+          {this.props.userid}
         </div>
       </div>
     );
