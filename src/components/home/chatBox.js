@@ -5,7 +5,7 @@ export default class ChatBox extends Component {
  
   constructor(props) {
     super(props);
-    this.messagesEndRef = React.createRef(null);
+    this.messagesEndRef = React.createRef();
     this.state = { messageList: [], message: "" };
     socket.on("message-Received", (msg) => {
       console.log("message Received", msg);
@@ -71,7 +71,7 @@ export default class ChatBox extends Component {
           </div>
           <div
            
-            style={{ width: "100%", height: "68vh", display: "flex", flexDirection: "column", justifyContent: "start", overflowY: "scroll" }}
+            style={{ width: "100%", height: "75vh", display: "flex", flexDirection: "column", justifyContent: "start", overflowY: "scroll" }}
             ref={this.messagesEndRef}
           >
             {this.state.messageList.map((data) => {
@@ -80,7 +80,7 @@ export default class ChatBox extends Component {
           </div>
         </div>
         <div
-          style={{ width: "100%", height: "10%" }}
+          style={{ width: "100%", height: "20%" }}
         >
           <div
             style={{
@@ -93,7 +93,7 @@ export default class ChatBox extends Component {
             }}
           >
             <div
-              style={{ width: "70%", height: "100%",border:"2px solid gray"}}
+              style={{ width: "70%", height: "100%"}}
               className="rounded"
             >
               <input
@@ -107,7 +107,7 @@ export default class ChatBox extends Component {
             <div
               style={{ width: "15%", height: "60%" }}
             >
-              <button style={{ width: "80%", height: "60%" }} className="rounded"  onClick={() => { this.onMessageSend() }}>▶</button>
+              <button style={{ width: "80%", height: "60%" }} className="rounded"  onClick={() => { this.onMessageSend() }} type="submit"> ▶</button>
             </div>
           </div>
         </div>

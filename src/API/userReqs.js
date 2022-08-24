@@ -8,7 +8,7 @@ export function UserCreate(username, email, password) {
   console.log("data", data);
   return new Promise((resolve, reject) => {
     
-    fetch("http://localhost:8080/create_user", {
+    fetch("https://comwooauthsystem.herokuapp.com/create_user", {
     method: "POST",
     body:JSON.stringify(data),
     headers: {
@@ -38,7 +38,7 @@ export function UserLogin(email, password) {
   }
   console.log(data);
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/login_user", {
+    fetch("https://comwooauthsystem.herokuapp.com/login_user", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {

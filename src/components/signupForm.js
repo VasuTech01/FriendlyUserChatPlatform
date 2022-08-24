@@ -39,7 +39,6 @@ class SignupForm extends Component {
         window.sessionStorage.setItem("userState", "loged");
         window.sessionStorage.setItem("user", Respo.user.username);
         window.sessionStorage.setItem("token", Respo.token);
-
         this.setState({ toastmsg: "show", loginRespo: "You Are Account is created , enjoy!", toastColor: "success" });
         setTimeout(() => { this.props.onHomeChange("home"); }, 900);
       }).catch((err) => {
@@ -59,9 +58,8 @@ class SignupForm extends Component {
     }
     return (
       <div className="container w-50  my-2 p-1 ">
-        <div className="container bg-dark text-light rounded  my-4">
-                <h2>Create Your Account Here</h2>
-                 
+        <div className="container bg-dark text-light rounded  my-4 p-1">
+                <h2>Create Your Account Here</h2>      
         </div>
         <div className="container p-2 bg-light rounded  border border-2 shadow h-100 w-100 d-flex flex-column justify-content-center ">
           <div className="input-group flex-nowrap  mx-1 my-3">

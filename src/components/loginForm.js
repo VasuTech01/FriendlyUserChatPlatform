@@ -87,7 +87,7 @@ class LoginForm extends Component {
 
     return (
       <form className="container w-50  my-2 p-1 " action="">
-        <div className="container bg-dark text-light rounded  my-4">
+        <div className="container bg-dark text-light rounded my-4 p-1">
           <h2>LOGIN YOUR ACCOUNT</h2>
         </div>
         <div className="container p-4 bg-light rounded  border border-2 shadow h-100 w-100 d-flex flex-column justify-content-center">

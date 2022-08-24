@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar onHomeChange={this.onHomeBodyChange} onUserStateChange={ this.UserStateManager} />
-        <div className="container-fluid my-4 rounded-3 border border-primary border-shadow " >
+        <div className="container-fluid my-4 rounded-3  border-shadow " style={{display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}} >
           {home}
         </div>
         </React.Fragment>

@@ -14,7 +14,7 @@ export default class HomeUserlist extends Component {
   
   render() {
     return (
-        <div style={{width:"90%",position:"relative"}} className="constainer w-80 d-flex flex-column shadow-lg rounded border border-2 border-dark bd-highlight p-3">
+        <div style={{width:"60%",position:"relative"}} className="constainer w-80 d-flex flex-column bg-light shadow-lg rounded bd-highlight p-3">
         {this.props.userList.map((user) => {
           console.log(user);
           return <ListItems key={user.id} username={user.username} userid={user.id} onCalleSelect={this.props.onCalleSelect}  />

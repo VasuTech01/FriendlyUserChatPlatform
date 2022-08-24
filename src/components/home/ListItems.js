@@ -16,7 +16,7 @@ export default class ListItems extends Component {
           boxShadow: "4px 2px 4px gray",
          
         }}
-        className="d-flex bd-highlight p-2   border rounded   border-warning bg-success my-1 text-light"
+        className="d-flex bd-highlight p-2   border rounded   border-warning bg-dark my-1 text-light"
         onClick={()=>{this.props.onCalleSelect(this.props.username,this.props.userid)}}
       >
         <div
@@ -31,6 +31,8 @@ export default class ListItems extends Component {
             border: "2px solid gray",
             width: "50%",
             fontWeight: "bold",
+            fontSize:"0.5rem"
+          
           }}
           className="p-2  bd-highlight"
           // onMouseOver={(e)=>{e.stopPropagation()}}
