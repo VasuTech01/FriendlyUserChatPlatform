@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 const socket = io.connect("https://comwooauthsystem.herokuapp.com", {
   withCredentials: true,
   extraHeaders: {
-   "Access-Control-Allow-Origin": "*"
+   "Access-Control-Allow-Origin": "https://comwooapp.herokuapp.com"
  }
 });
 
