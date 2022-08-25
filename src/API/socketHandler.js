@@ -8,7 +8,8 @@ const socket = io.connect("https://comwooauthsystem.herokuapp.com", {
   transportOptions: {
     polling: {
       extraHeaders: {
-        "my-custom-header": "abcd"
+        "my-custom-header": "abcd",
+        "Access-Control-Allow-Origin": "https://comwooapp.herokuapp.com",
       }
     }
   }
