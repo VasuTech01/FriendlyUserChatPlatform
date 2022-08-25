@@ -3,7 +3,16 @@ import { io } from "socket.io-client";
 
 
 
-const socket = io.connect("https://comwooauthsystem.herokuapp.com",);
+const socket = io.connect("https://comwooauthsystem.herokuapp.com", {
+  withCredentials: true,
+  transportOptions: {
+    polling: {
+      extraHeaders: {
+        "my-custom-header": "abcd"
+      }
+    }
+  }
+});
 
 
 const username = window.sessionStorage.getItem("user") ? window.sessionStorage.getItem("user") : "unknown";
