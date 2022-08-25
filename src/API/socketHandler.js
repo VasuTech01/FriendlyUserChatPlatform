@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 
 
 const socket = io.connect("https://comwooauthsystem.herokuapp.com", {
-  withCredentials: true,
+  withCredentials: false,
   transportOptions: {
     polling: {
       extraHeaders: {
