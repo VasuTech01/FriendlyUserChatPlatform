@@ -12,7 +12,7 @@ const socket = io.connect("https://comwooauthsystem.herokuapp.com", {
         "Access-Control-Allow-Origin": "https://comwooapp.herokuapp.com",
       }
     }
-  }
+  },
 });
 
 
